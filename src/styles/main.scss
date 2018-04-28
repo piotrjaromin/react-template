@@ -44,7 +44,7 @@ footer {
   color: #b94a48;
 }
 
-.navbar-inverse {
+.bg-light {
   background-color: #2d3e50;
   border-color: #2d3e50;
 }
@@ -53,21 +53,22 @@ footer {
   border-right: 1px dashed #333;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.nbg-light .navbar-nav > li > a {
   color: #6FBEF3;
 }
 
-.navbar-inverse .navbar-text {
+.bg-light .navbar-text {
   color: #6FBEF3;
 }
 
-.navbar-inverse .navbar-brand {
+.bg-light .navbar-brand {
   color: #6FBEF3;
 }
 
 .jumbotron {
   background-color: #1f8dd6;
   color: white;
+  border-radius: 0;
 }
 
 .em5-padding {
