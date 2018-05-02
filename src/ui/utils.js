@@ -20,7 +20,7 @@ module.exports.createChangeHandler = (self) => {
             const state = {};
 
             let value = e.target.value;
-            if (e.target.type === "number") {
+            if (e.target.type === 'number') {
                 value = parseInt(value);
             }
 
@@ -51,11 +51,11 @@ module.exports.createHandleFormError = (self) => {
 module.exports.getParams = () => {
     const hash = window.location.hash;
 
-    const paramsSplited = hash.split(/\?(.+)/)[1].split("&");
+    const paramsSplited = hash.split(/\?(.+)/)[1].split('&');
 
     const params = {};
     paramsSplited.forEach(el => {
-        const [key, val] = el.split("=");
+        const [key, val] = el.split('=');
         params[key] = val
     });
 

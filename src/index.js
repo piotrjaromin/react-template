@@ -17,16 +17,25 @@ let Router = require('react-router').Router;
 let IndexRoute = require('react-router').IndexRoute;
 let hashHistory = require('react-router').hashHistory;
 
+let LoginPage = require('./ui/login/LoginPage');
+let ResetPassword = require('./ui/login/ResetPassword');
+let ConfirmResetPassword = require('./ui/login/ConfirmResetPassword');
+
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
+        this.refresh = this.refresh.bind(this);
+    }
+
+    refresh() {
+        window.location.href = '/';
     }
 
     render() {
         return <div>
-            <Navigation/>
+            <Navigation refresh={this.refresh}/>
             <div>
                 {this.props.children}
                 <Footer/>
@@ -47,7 +56,10 @@ class Container extends React.Component {
 ReactDOM.render(<Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Content}/>
-            <Route path="" component={Container}>=
+                <Route path="" component={Container}>
+                <Route path="login" component={LoginPage}/>
+                <Route path="resetPassword" component={ResetPassword}/>
+                <Route path="confirmResetPassword" component={ConfirmResetPassword}/>
                 <Route path="offers" component={TestContent}/>
                 <Route path="companies" component={TestContent}/>
             </Route>
